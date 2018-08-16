@@ -16,6 +16,7 @@
 <bean id="welcome" class="com.model.WelcomeImpl">
 </bean>
 <bean id="aspect" class="com.aspect.WelcomeAspect"></bean>
+<bean id="aspectAnother" class="com.aspect.WelcomeAspectAnother"></bean>
 <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"></bean>
 
  

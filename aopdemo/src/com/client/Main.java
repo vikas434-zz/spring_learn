@@ -12,8 +12,8 @@ public class Main {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
 		Welcome welcome = (Welcome) ctx.getBean("welcome");
 		welcome.sayWelcome("Akshay Kumar ", " MI");
-		welcome.sayHi("Tom Cruise");
-		welcome.callMeOfWelcome();
+//		welcome.sayHi("Tom Cruise");
+//		welcome.callMeOfWelcome();
 
 	}
 
