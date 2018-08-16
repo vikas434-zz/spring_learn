@@ -1,5 +1,8 @@
 package com.model;
 
+import org.springframework.stereotype.Component;
+
+@Component("welcome")
 public class WelcomeImpl implements Welcome {
 
 	@Override
