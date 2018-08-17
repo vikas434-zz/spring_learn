@@ -1,29 +1,33 @@
 package com.aspect;
 
-import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-public class WelcomeAspect implements Ordered {
+public class WelcomeAspect {
 	
-	@Before("execution (void com.model.WelcomeImpl.*(..))")
-	public void callMeBefore() {
-		System.out.println("I am called via Aspect before");
+//	@Before("execution (void com.model.WelcomeImpl.*(..))")
+//	public void callMeBefore(JoinPoint jp) {
+//		System.out.println("I am called via Aspect before "+jp.getSignature().getName());
+//	}
+	
+	@Around("execution (void com.model.WelcomeImpl.*(..))")
+	public void callMeBefore(ProceedingJoinPoint jp) throws Throwable {
+		System.out.println("I am called via Aspect before "+jp.getSignature().getName());
+		jp.proceed();
+		System.out.println("Now after ");
 	}
 	
-	@After("execution (void com.model.WelcomeImpl.*(..))")
-	public void callMeAfter() {
-		System.out.println("I am called via Aspect and after ");
-	}
+	
+//	@After("execution (void com.model.WelcomeImpl.*(..))")
+//	public void callMeAfter() {
+//		System.out.println("I am called via Aspect and after ");
+//	}
 
-	@Override
-	public int getOrder() {
-		return 2;
-	}
+	
 	
 
 }

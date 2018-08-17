@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class WelcomeAspectAnother implements Ordered {
 	
-	@Before("execution (void com.model.WelcomeImpl.*(..))")
-	public void callMeBefore() {
-		System.out.println("I am called via Aspect before from another");
-	}
+//	@Before("execution (void com.model.WelcomeImpl.*(..))")
+//	public void callMeBefore() {
+//		System.out.println("I am called via Aspect before from another");
+//	}
 
 	@Override
 	public int getOrder() {
